@@ -51,20 +51,20 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey You {},You Are In Light's Pm
+Hey You {},You Are In Senku's Pm
 
 Nice To Meet You Dude....
 
 I am an Anime themed group management bot.
-I am Made To Provide Justice To Your Group.
+I am Made To Help in build in making your KINGDOM OF SCIENCE.
 Here You Can See My Power By Writing /help.
 """
 
 HELP_STRINGS = """
-[Light](https://telegra.ph/file/707a516dfc688ebb8c423.mp4) Is Here:
+[Senku](https://telegra.ph/file/c8958f19e44922ad8ca2c.mp4) Is Here:
 Here You Can See My Power With These Power 
-I Will Manage Your Group
-And Provide Justice To Your Group
+I Will Manage Your Group with my IQ.
+
 ✪ /start: Starts me! You've probably already used this.
 ✪ /help: Click this, I'll let you know about myself!
 ✪ /settings: 
@@ -74,8 +74,8 @@ And Provide Justice To Your Group
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/4911c03742b50ad0d8bf7.jpg"
-LIGHT_IMG = "https://telegra.ph/file/5580465a8e3c4d51d5c3c.mp4"
+SAITAMA_IMG = "https://telegra.ph/file/1840ea114d12fc83f973b.jpg"
+LIGHT_IMG = "https://telegra.ph/file/c8958f19e44922ad8ca2c.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 """
@@ -195,7 +195,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="⚖️Add Kira to your group⚖️",
+                            text="⚖️Add Senku to your group⚖️",
                             url="t.me/{}?startgroup=true".format(context.bot.username))
                     ],
                      [
@@ -203,27 +203,27 @@ def start(update: Update, context: CallbackContext):
                              text="📢 Support Group",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
-                             text="🔔 Updates Of Light 🔔",
-                             url="https://t.me/seedofbots")
+                             text=" HELP ",
+                             url="t.me/{}?start=help".format(context.bot.username)")
                      ],
                     
                     [
                          InlineKeyboardButton(
-                             text="❤My God❤",
-                             url="https://t.me/death_note_light_yagami"),
+                             text="❤My INSPIRATION❤",
+                             url="https://t.me/thebatman21"),
                          InlineKeyboardButton(
                              text="⌨Repo🖱",
-                             url="https://github.com/YashMorya/LightYagami")
+                             url="https://github.com/asadali32117/LightYagami")
                      ],[
                         InlineKeyboardButton(
-                            text="❗❔Help And Commands❔",
-                            url="t.me/{}?start=help".format(context.bot.username))
+                            text="Anime Chat Group",
+                            url="https://t.me/animetalks211")
                     ]]))
     else:
         update.effective_message.reply_video(
                 LIGHT_IMG)
         update.effective_message.reply_text(
-            "Let's Kill Bad Peoples\nBy Writing Those Name On <b>Death Note</b>\n<b>Writing Name On Death Note Since :</b> <code>{}</code>".format(uptime),
+            "Let's Create our own\nKingdom Of <b>Science</b>\n<b>Kingdom of Science Since :</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
 
 # for test purposes
@@ -539,7 +539,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Time To Write Names On Death Note")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Time To Use Science")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
